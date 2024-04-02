@@ -1,0 +1,38 @@
+mybatis-plus:
+  global-config:
+    banner: false
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+spring:
+  session:
+    timeout: 86400
+    store-type: redis # 依赖spring-session-data-redis库，表示从 `redis` 读写session
+  redis:
+    port: 6379
+    host: localhost
+    database: 2
+    timeout: 5s
+    connect-timeout: 5s
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      stat-view-servlet:
+        # true /druid/index.html
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: root
+        login-password: 123456
+        allow:
+        deny:
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 3000
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: true

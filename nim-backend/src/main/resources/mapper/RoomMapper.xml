@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nim.mapper.RoomMapper">
+
+    <resultMap id="BaseResultMap" type="com.nim.pojo.domain.Room">
+            <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="owner" column="owner" jdbcType="VARCHAR"/>
+            <result property="partner" column="partner" jdbcType="VARCHAR"/>
+            <result property="roomStatus" column="room_status" jdbcType="TINYINT"/>
+            <result property="firstPlayer" column="first_player" jdbcType="VARCHAR"/>
+            <result property="numbers" column="numbers" jdbcType="VARCHAR"/>
+            <result property="winner" column="winner" jdbcType="TINYINT"/>
+            <result property="round" column="round" jdbcType="INTEGER"/>
+            <result property="ownerSkill" column="owner_skill" jdbcType="VARCHAR"/>
+            <result property="partnerSkill" column="partner_skill" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="deleted" column="deleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,owner,partner,
+        room_status,first_player,numbers,
+        winner,round,owner_skill,
+        partner_skill,create_time,update_time,
+        deleted
+    </sql>
+</mapper>
